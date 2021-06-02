@@ -1,0 +1,79 @@
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+
+@font-face {
+  font-family: "Pokemon";
+  src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot");
+  src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon")
+      format("svg");
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-family: "Pokemon";
+  color: yellow;
+  text-shadow: 0 0 5px darkblue, 0 0 5px darkblue, 0 0 5px darkblue,
+    0 0 5px darkblue;
+}
+
+.centered {
+  text-align: center;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.pokemon {
+  background-color: rgba(240, 255, 240, 0.1);
+  border-radius: 10px;
+  border-style: outset;
+}
+
+html {
+  background: url("https://images6.alphacoders.com/420/420248.jpg") no-repeat
+    center fixed;
+  background-size: cover;
+}
+
+#container {
+}
+
+#selectLine {
+  border-radius: 5px;
+}
+
+#checkbox {
+  background-color: lightskyblue;
+  color: lightskyblue;
+}
+
+select {
+  background-color: lightskyblue;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  border-style: outset;
+  background-color: lightskyblue;
+}
+
+button {
+  border-radius: 5px;
+  background-color: lightskyblue;
+}

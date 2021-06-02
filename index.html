@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Pokemon Randomizer</title>
+  </head>
+  <body>
+    <h1 class="centered">Generate a random Pokemon Team</h1>
+    <div class="centered" id="selectLine">
+      <label for="genSelector">Up to following gen:</label>
+      <select name="genSelector" id="genSelector">
+        <option value="gen1">Generation 1</option>
+        <option value="gen2">Generation 2</option>
+        <option value="gen3">Generation 3</option>
+        <option value="gen4">Generation 4</option>
+        <option value="gen5">Generation 5</option>
+        <option value="gen6">Generation 6</option>
+        <option value="gen7">Generation 7</option>
+        <option value="gen8" selected="selected">Generation 8</option>
+      </select>
+      <label class="switch">
+        <input id="checkbox" type="checkbox" />
+        <span class="slider round">Exclude Legendaries</span>
+      </label>
+      <button id="randomizer">Randomize</button>
+    </div>
+    <form class="centered">
+      <div id="pokemon1" class="inline pokemon">
+        <img
+          id="img1"
+          class="sprite"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        />
+        <h3 id="name1">Bulbasaur</h3>
+        <ul id="moveset1">
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+        </ul>
+      </div>
+      <div id="pokemon2" class="inline pokemon">
+        <img
+          id="img2"
+          class="sprite"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        />
+        <h3 id="name2">Bulbasaur</h3>
+        <ul id="moveset2">
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+        </ul>
+      </div>
+      <div id="pokemon3" class="inline pokemon">
+        <img
+          id="img3"
+          class="sprite"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        />
+        <h3 id="name3">Bulbasaur</h3>
+        <ul id="moveset3">
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+        </ul>
+      </div>
+      <div id="pokemon4" class="inline pokemon">
+        <img
+          id="img4"
+          class="sprite"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        />
+        <h3 id="name4">Bulbasaur</h3>
+        <ul id="moveset4">
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+        </ul>
+      </div>
+      <div id="pokemon5" class="inline pokemon">
+        <img
+          id="img5"
+          class="sprite"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        />
+        <h3 id="name5">Bulbasaur</h3>
+        <ul id="moveset5">
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+        </ul>
+      </div>
+      <div id="pokemon6" class="inline pokemon">
+        <img
+          id="img6"
+          class="sprite"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        />
+        <h3 id="name6">Bulbasaur</h3>
+        <ul id="moveset6">
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+          <li>None</li>
+        </ul>
+      </div>
+    </form>
+    <script src="apps.js"></script>
+  </body>
+</html>
