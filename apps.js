@@ -2,7 +2,8 @@ const randomizer = document.querySelector("#randomizer");
 const images = document.querySelectorAll(".sprite");
 const slots = document.querySelectorAll(".pokemon");
 const checkbox = document.querySelector("#checkbox");
-const genSelector = document.querySelector("#genSelector");
+//const genSelector = document.querySelector("#genSelector");
+const genSelector = document.querySelector("#gen-selector");
 //const movesets = document.querySelectorAll("UL")
 const legends = [
   144, 145, 146, 150, 151, 243, 244, 245, 249, 250, 377, 378, 379, 380, 381,
@@ -11,13 +12,16 @@ const legends = [
   789, 790, 791, 792, 800, 888, 889, 890, 891, 892, 894, 895, 896, 896, 897,
   898,
 ];
-let pokedexLimit = 30; // should be 897 by default
+//let pokedexLimit = 897; // should be 897 by default
+let generationSelection = [1, 2, 3, 4, 5, 6, 7, 8]; //
+let generationLimits = [0, 150, 250, 385, 492, 648, 720, 808, 897];
 let invalidNumbers = [];
 
 const capitalize = (string) => {
   return string[0].toUpperCase() + string.slice(1);
 };
 
+/*
 function updatePokedexLimit() {
   switch (genSelector.value) {
     case "gen1":
@@ -46,11 +50,42 @@ function updatePokedexLimit() {
       break;
   }
 }
+*/
 
-const getRandomNumber = (limit) => {
-  const output = Math.round(Math.random() * limit) + 1;
-  //console.log(output)
+const updateGenerationSelection = () => {
+  for (let i = 1; i < 9; i++) {
+    let id = `gen-${i}`;
+    let input = document.getElementById(id).querySelector("INPUT");
+    if (input.checked && !generationSelection.includes(i)) {
+      generationSelection.push(i);
+      //console.log("we added ", i);
+    }
+    if (!input.checked) {
+      generationSelection = generationSelection.filter((item) => item !== i);
+      //console.log("we removed ", i);
+    }
+  }
+  //console.log(generationSelection);
+};
+
+const getRandomNumber = (limit, min = 0) => {
+  const output = Math.round(Math.random() * (limit - min)) + min + 1;
+  //console.log(offset);
   return output;
+};
+
+const getRandomGenerationNumber = (generations) => {
+  if (generations.length === 0) {
+    return getRandomNumber(generationLimits[8]);
+  }
+  let randomGeneration =
+    generations[Math.floor(Math.random() * generations.length)];
+  //console.log(randomGeneration);
+  let result = getRandomNumber(
+    generationLimits[randomGeneration],
+    generationLimits[randomGeneration - 1] + 1
+  );
+  return result;
 };
 
 const makeRandomMoves = (slot, source) => {
@@ -81,8 +116,6 @@ const makeRandomMoves = (slot, source) => {
     }
   }
 };
-
-//let arr = [{move: {name: "a"}}, {move: {name: "b"}} ,{move: {name: "c"}}]
 
 const makePokemon = async (slot, number) => {
   const image = slot.querySelector("IMG");
@@ -118,14 +151,14 @@ const makeRandomTeam = async (exceptions) => {
   let invalidNumbers = [...exceptions];
   let evolutions = [];
   for (slot of slots) {
-    let pokedexNumber = getRandomNumber(pokedexLimit);
+    let pokedexNumber = getRandomGenerationNumber(generationSelection);
     let evolutionChain = await getEvolutionChain(pokedexNumber);
     //console.log("evoChain: ", typeof evolutionChain, evolutionChain);
     while (
       invalidNumbers.includes(pokedexNumber) ||
       evolutions.includes(evolutionChain)
     ) {
-      pokedexNumber = getRandomNumber(pokedexLimit);
+      pokedexNumber = getRandomGenerationNumber(generationSelection);
       evolutionChain = await getEvolutionChain(pokedexNumber);
     }
     invalidNumbers.push(pokedexNumber);
@@ -143,7 +176,9 @@ randomizer.addEventListener("click", () => {
   }
 });
 
-genSelector.addEventListener("click", () => {
-  updatePokedexLimit();
-  //console.log(pokedexLimit)
-});
+//genSelector.addEventListener("click", () => {
+//  updatePokedexLimit();
+//  //console.log(pokedexLimit)
+//});
+
+genSelector.addEventListener("click", updateGenerationSelection);

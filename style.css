@@ -74,3 +74,41 @@ button {
   border-radius: 5px;
   background-color: lightskyblue;
 }
+
+#gen-selector {
+  text-align: center;
+}
+
+.gen-selector-option {
+  margin: 4px;
+  background-color: lightskyblue;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+  overflow: auto;
+  float: center;
+}
+
+.gen-selector-option:hover {
+  background: lightskyblue;
+}
+
+.gen-selector-option label {
+  /*float: left;*/
+  width: 6em;
+}
+
+.gen-selector-option label span {
+  text-align: center;
+  padding: 3px 0px;
+  display: block;
+}
+
+.gen-selector-option label input {
+  position: absolute;
+  top: -20px;
+}
+
+.gen-selector-option input:checked + span {
+  background-color: rgb(10, 85, 110);
+  color: #fff;
+}

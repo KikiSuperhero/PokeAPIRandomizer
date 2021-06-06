@@ -16,7 +16,7 @@
   <body>
     <h1 class="centered">Generate a random Pokemon Team</h1>
     <div class="centered" id="selectLine">
-      <label for="genSelector">Up to following gen:</label>
+      <!-- <label for="genSelector">Up to following gen:</label>
       <select name="genSelector" id="genSelector">
         <option value="gen1">Generation 1</option>
         <option value="gen2">Generation 2</option>
@@ -26,10 +26,10 @@
         <option value="gen6">Generation 6</option>
         <option value="gen7">Generation 7</option>
         <option value="gen8" selected="selected">Generation 8</option>
-      </select>
+      </select> -->
       <label class="switch">
         <input id="checkbox" type="checkbox" />
-        <span class="slider round">Exclude Legendaries</span>
+        <span class="slider round">No Legendaries</span>
       </label>
       <button id="randomizer">Randomize</button>
     </div>
@@ -119,6 +119,64 @@
         </ul>
       </div>
     </form>
+    <div id="gen-selector">
+      <div id="gen-1" class="inline gen-selector-option">
+        <label>
+          <input type="checkbox" value="gen1" checked="checked" /><span
+            >Gen 1</span
+          >
+        </label>
+      </div>
+      <div id="gen-2" class="inline gen-selector-option">
+        <label>
+          <input type="checkbox" value="gen2" checked="checked" /><span
+            >Gen 2</span
+          >
+        </label>
+      </div>
+      <div id="gen-3" class="inline gen-selector-option">
+        <label>
+          <input type="checkbox" value="gen3" checked="checked" /><span
+            >Gen 3</span
+          >
+        </label>
+      </div>
+      <div id="gen-4" class="inline gen-selector-option">
+        <label>
+          <input type="checkbox" value="gen4" checked="checked" /><span
+            >Gen 4</span
+          >
+        </label>
+      </div>
+      <div id="gen-5" class="inline gen-selector-option">
+        <label>
+          <input type="checkbox" value="gen5" checked="checked" /><span
+            >Gen 5</span
+          >
+        </label>
+      </div>
+      <div id="gen-6" class="inline gen-selector-option">
+        <label>
+          <input type="checkbox" value="gen6" checked="checked" /><span
+            >Gen 6</span
+          >
+        </label>
+      </div>
+      <div id="gen-7" class="inline gen-selector-option">
+        <label>
+          <input type="checkbox" value="gen7" checked="checked" /><span
+            >Gen 7</span
+          >
+        </label>
+      </div>
+      <div id="gen-8" class="inline gen-selector-option">
+        <label>
+          <input type="checkbox" value="gen8" checked="checked" /><span
+            >Gen 8</span
+          >
+        </label>
+      </div>
+    </div>
     <script src="apps.js"></script>
   </body>
 </html>
