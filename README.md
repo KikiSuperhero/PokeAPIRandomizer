@@ -5,3 +5,5 @@ The possible pokemon can be restricted to a desired generation und legendaries c
 The data is taken from PokeAPI (https://pokeapi.co/).
 
 Also, I don't care much for styling, so if anybody should be interested in adding some css, feel free!
+
+Test
